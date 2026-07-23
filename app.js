@@ -20,7 +20,6 @@
 const REFRESH_INTERVAL_MS = 3 * 60 * 1000; // 正常情況下,每 3 分鐘重新讀一次 data.json
 const RETRY_BASE_MS = 2000;                 // 重試退避基準:2s, 4s, 8s, 16s, 30s(上限)
 const RETRY_MAX_MS = 30000;
-const STALE_WARN_MINUTES = 25;              // 資料超過幾分鐘沒更新就視為「可能過時」
 
 const state = {
   retryCount: 0,
@@ -126,11 +125,6 @@ function render(data) {
         (staleMin !== null ? `(約 ${Math.round(staleMin)} 分鐘前)` : "") +
         `,並非即時數值。` +
         (data.error ? `<br><span style="opacity:.75">錯誤訊息:${escapeHtml(data.error)}</span>` : "")
-    );
-  } else if (staleMin !== null && staleMin > STALE_WARN_MINUTES) {
-    showBanner(
-      "warn",
-      `⚠️ 資料已經 ${Math.round(staleMin)} 分鐘沒有更新,可能不是最新即時數值(來源網站可能暫時異常)。`
     );
   } else {
     hideBanner();
