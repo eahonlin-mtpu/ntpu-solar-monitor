@@ -2,10 +2,11 @@ name: Fetch solar data
 
 # 排程時間用 UTC。台灣時間(UTC+8)06:00-19:00 换算成 UTC 是前一天 22:00 到當天 11:00。
 # 這剛好對應原網站自己的更新邏輯(只在白天 6-19 點才重新抓資料)。
-# 每 15 分鐘跑一次,若那次抓取失敗,scrape.py 內部會自己重試(見 scripts/scrape.py)。
+# 每 5 分鐘跑一次(GitHub Actions 排程支援的最短間隔),把跟原網站的落差壓在幾分鐘內。
+# 若那次抓取失敗,scrape.py 內部會自己重試(見 scripts/scrape.py)。
 on:
   schedule:
-    - cron: "*/15 22-23,0-11 * * *"
+    - cron: "*/5 22-23,0-11 * * *"
   workflow_dispatch: {}  # 允許在 GitHub 網頁上手動按「Run workflow」測試
 
 permissions:
