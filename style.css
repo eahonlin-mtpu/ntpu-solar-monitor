@@ -165,6 +165,7 @@ body {
 
 .card .name {
   padding: clamp(14px, 1.2vw, 22px) clamp(16px, 1.3vw, 24px) clamp(8px, 0.8vw, 14px);
+  text-align: center;
 }
 
 .card .name .name-main {
@@ -175,7 +176,7 @@ body {
 
 .card .name .name-sub {
   font-weight: 500;
-  font-size: clamp(13px, 1.05vw, 20px);
+  font-size: clamp(16px, 1.35vw, 26px);
   color: var(--muted);
   margin-top: 4px;
   line-height: 1.25;
