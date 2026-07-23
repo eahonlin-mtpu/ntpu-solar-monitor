@@ -165,8 +165,20 @@ body {
 
 .card .name {
   padding: clamp(14px, 1.2vw, 22px) clamp(16px, 1.3vw, 24px) clamp(8px, 0.8vw, 14px);
+}
+
+.card .name .name-main {
   font-weight: 700;
   font-size: clamp(16px, 1.35vw, 26px);
+  line-height: 1.25;
+}
+
+.card .name .name-sub {
+  font-weight: 500;
+  font-size: clamp(13px, 1.05vw, 20px);
+  color: var(--muted);
+  margin-top: 4px;
+  line-height: 1.25;
 }
 
 .metric-row {

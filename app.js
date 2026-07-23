@@ -168,9 +168,12 @@ function render(data) {
     .map(
       (s) => `
     <div class="card">
-      <img class="thumb" src="${s.thumbnail_url}" alt="${escapeHtml(s.site_name || "")}" loading="lazy"
+      <img class="thumb" src="${s.thumbnail_url}" alt="${escapeHtml(s.name_main || s.site_name || "")}" loading="lazy"
            onerror="this.style.display='none'">
-      <div class="name">${escapeHtml(s.site_name || "(未命名案場)")}</div>
+      <div class="name">
+        <div class="name-main">${escapeHtml(s.name_main || s.site_name || "(未命名案場)")}</div>
+        ${s.name_sub ? `<div class="name-sub">(${escapeHtml(s.name_sub)})</div>` : ""}
+      </div>
       <div class="metric-row">
         <div class="metric-icon red">◆</div>
         <div class="metric-text"><div class="label">裝置容量</div><div class="value">${fmt(s.kwp, 2)}<span class="unit">kWp</span></div></div>
