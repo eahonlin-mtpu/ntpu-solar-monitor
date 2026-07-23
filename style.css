@@ -10,23 +10,33 @@
   --ok: #26a65b;
   --warn: #f39c34;
   --err: #e2574c;
-  --radius: 14px;
-  --shadow: 0 2px 10px rgba(20, 30, 50, 0.08);
+  --radius: 18px;
+  --shadow: 0 4px 16px rgba(20, 30, 50, 0.10);
 }
 
 * { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
 
 body {
   margin: 0;
   font-family: "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg);
   color: var(--text);
+  /* 基準字級跟著視窗寬度縮放,以 1920px(55吋電視常見解析度)為主要調校目標,
+     同時用 clamp() 保留在筆電/平板上瀏覽時的可讀性。 */
+  font-size: clamp(15px, 1.05vw, 22px);
 }
 
 .wrap {
-  max-width: 1400px;
+  max-width: 1920px;
+  min-height: 100vh;
   margin: 0 auto;
-  padding: 20px 24px 48px;
+  padding: clamp(16px, 2vw, 40px) clamp(20px, 3vw, 56px) clamp(24px, 3vw, 56px);
+  display: flex;
+  flex-direction: column;
 }
 
 .topbar {
@@ -34,36 +44,37 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 18px;
+  gap: 16px;
+  margin-bottom: clamp(18px, 2vw, 36px);
 }
 
 .topbar h1 {
-  font-size: 20px;
+  font-size: clamp(28px, 2.6vw, 50px);
   margin: 0;
   font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .topbar .subtitle {
-  font-size: 13px;
+  font-size: clamp(14px, 1.1vw, 22px);
   color: var(--muted);
-  margin-top: 2px;
+  margin-top: 6px;
 }
 
 .status-cluster {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 .status-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
+  gap: 10px;
+  padding: 10px 20px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: clamp(14px, 1.1vw, 22px);
   font-weight: 600;
   background: #eef1f6;
   color: var(--muted);
@@ -74,17 +85,18 @@ body {
 .status-pill.err { background: rgba(226,87,76,0.14); color: var(--err); }
 
 .status-dot {
-  width: 8px; height: 8px; border-radius: 50%;
+  width: 0.7em; height: 0.7em; border-radius: 50%;
   background: currentColor;
+  flex-shrink: 0;
 }
 
 .refresh-btn {
   border: none;
   background: var(--blue);
   color: #fff;
-  padding: 7px 14px;
-  border-radius: 8px;
-  font-size: 13px;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: clamp(14px, 1.1vw, 22px);
   font-weight: 600;
   cursor: pointer;
 }
@@ -94,12 +106,12 @@ body {
 .banner {
   display: none;
   align-items: flex-start;
-  gap: 10px;
-  padding: 12px 16px;
-  border-radius: 10px;
-  font-size: 13.5px;
-  line-height: 1.5;
-  margin-bottom: 18px;
+  gap: 12px;
+  padding: 18px 22px;
+  border-radius: 14px;
+  font-size: clamp(14px, 1.05vw, 21px);
+  line-height: 1.55;
+  margin-bottom: clamp(16px, 1.8vw, 28px);
 }
 .banner.show { display: flex; }
 .banner.warn { background: rgba(243,156,52,0.12); color: #92600f; border: 1px solid rgba(243,156,52,0.35); }
@@ -108,24 +120,30 @@ body {
 .summary-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  margin-bottom: 22px;
+  gap: clamp(14px, 1.4vw, 26px);
+  margin-bottom: clamp(20px, 2.2vw, 36px);
 }
 
 .summary-card {
   background: var(--card-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 16px 18px;
+  padding: clamp(16px, 1.6vw, 30px) clamp(18px, 1.8vw, 32px);
 }
-.summary-card .label { font-size: 12.5px; color: var(--muted); margin-bottom: 6px; }
-.summary-card .value { font-size: 22px; font-weight: 700; }
-.summary-card .unit { font-size: 12px; color: var(--muted); margin-left: 4px; font-weight: 500; }
+.summary-card .label { font-size: clamp(13px, 0.95vw, 19px); color: var(--muted); margin-bottom: 8px; }
+.summary-card .value { font-size: clamp(24px, 2.4vw, 46px); font-weight: 700; line-height: 1.1; }
+.summary-card .unit { font-size: clamp(12px, 0.85vw, 17px); color: var(--muted); margin-left: 6px; font-weight: 500; }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 16px;
+  gap: clamp(16px, 1.6vw, 28px);
+  flex: 1;
+}
+
+@media (min-width: 1400px) {
+  /* 目前案場固定 5 個,寬螢幕(電視牆)時強制排成單一列,畫面更穩定滿版 */
+  .grid { grid-template-columns: repeat(5, 1fr); }
 }
 
 .card {
@@ -139,32 +157,32 @@ body {
 
 .card .thumb {
   width: 100%;
-  height: 140px;
+  height: clamp(140px, 14vw, 260px);
   object-fit: cover;
   background: #dde3ea;
   display: block;
 }
 
 .card .name {
-  padding: 12px 14px 8px;
+  padding: clamp(14px, 1.2vw, 22px) clamp(16px, 1.3vw, 24px) clamp(8px, 0.8vw, 14px);
   font-weight: 700;
-  font-size: 15px;
+  font-size: clamp(16px, 1.35vw, 26px);
 }
 
 .metric-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 14px;
+  gap: clamp(10px, 1vw, 18px);
+  padding: clamp(10px, 1vw, 18px) clamp(16px, 1.3vw, 24px);
   border-top: 1px solid #f0f2f6;
 }
 
 .metric-icon {
-  width: 30px; height: 30px;
-  border-radius: 8px;
+  width: clamp(32px, 2.6vw, 48px); height: clamp(32px, 2.6vw, 48px);
+  border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
   color: #fff;
-  font-size: 14px;
+  font-size: clamp(15px, 1.2vw, 22px);
   flex-shrink: 0;
 }
 .metric-icon.red { background: var(--red); }
@@ -172,17 +190,18 @@ body {
 .metric-icon.green { background: var(--green); }
 .metric-icon.blue { background: var(--blue); }
 
-.metric-text .label { font-size: 11.5px; color: var(--muted); }
-.metric-text .value { font-size: 14.5px; font-weight: 700; }
-.metric-text .value .unit { font-size: 11px; color: var(--muted); font-weight: 500; margin-left: 3px; }
+.metric-text .label { font-size: clamp(12px, 0.95vw, 18px); color: var(--muted); }
+.metric-text .value { font-size: clamp(16px, 1.3vw, 26px); font-weight: 700; }
+.metric-text .value .unit { font-size: clamp(11px, 0.8vw, 15px); color: var(--muted); font-weight: 500; margin-left: 4px; }
 
 .footer-note {
-  margin-top: 22px;
-  font-size: 12px;
+  margin-top: clamp(20px, 2.2vw, 36px);
+  font-size: clamp(12px, 0.85vw, 17px);
   color: var(--muted);
   text-align: center;
 }
 
 @media (max-width: 720px) {
   .summary-row { grid-template-columns: repeat(2, 1fr); }
+  .grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important; }
 }
