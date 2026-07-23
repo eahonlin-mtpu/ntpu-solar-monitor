@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>太陽能即時監控 - 重新設計面板</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div>
+        <h1>太陽能即時監控面板</h1>
+        <div class="subtitle" id="last-updated">載入中…</div>
+      </div>
+      <div class="status-cluster">
+        <span class="status-pill" id="status-pill"><span class="status-dot"></span><span id="status-text">連線中…</span></span>
+        <button class="refresh-btn" id="refresh-btn">立即重新整理</button>
+      </div>
+    </div>
+
+    <div class="banner" id="banner"></div>
+
+    <div class="summary-row" id="summary-row"></div>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="footer-note">
+      資料每 3 分鐘自動重新讀取一次;背景資料每 15 分鐘(台灣時間 06:00–19:00)由 GitHub Actions 更新一次,失敗會自動重試。
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
