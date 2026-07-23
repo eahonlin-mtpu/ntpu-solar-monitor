@@ -17,7 +17,7 @@
  *          而不是像原網站一樣完全沒有任何提示。
  */
 
-const REFRESH_INTERVAL_MS = 3 * 60 * 1000; // 正常情況下,每 3 分鐘重新讀一次 data.json
+const REFRESH_INTERVAL_MS = 2 * 60 * 1000; // 正常情況下,每 2 分鐘重新讀一次 data.json(背景每 5 分鐘更新一次)
 const RETRY_BASE_MS = 2000;                 // 重試退避基準:2s, 4s, 8s, 16s, 30s(上限)
 const RETRY_MAX_MS = 30000;
 

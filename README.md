@@ -35,12 +35,11 @@ tatung-solar-dashboard/
   `status: "error"`、`last_attempt_at`、`error` 訊息。
 
 - **前端顯示層**(`app.js`):
-  - 如果連 `data.json` 本身都讀不到(GitHub Pages 短暫異常等),會塯示
+  - 如果連 `data.json` 本身都讀不到(GitHub Pages 短暫異常等),會顯示
     「重試中(第 N 次)」並自動用指數退避重試,同時提供「立即重新整理」
     按鈕。
   - 如果 `data.json` 顯示 `status: "error"`(代表背景抓取上游網站失敗),
     會顯示醒目的警示,說明目前看到的是「最後一次成功的資料」而非即時值。
-  - 如果資料時間超過 25 分鐘沒更新,也會顯示提醒(可能來源異常)。
 
 ## 部署步驟(GitHub)
 
@@ -54,17 +53,16 @@ tatung-solar-dashboard/
    `data.json`)。
 4. 到 **Actions** 分頁,可以手動點 `Run workflow` 先測試一次抓取是否成功;
    之後就會照 `.github/workflows/fetch-data.yml` 裡設定的排程
-   (台灣時間每天 06:00–19:00,每 15 分鐘一次)自動執行。
+   (台灣時間每天 06:00–19:00,每 5 分鐘一次)自動執行。
 
 ## 想調整的地方
 
 - **抓取頻率 / 時段**:改 `.github/workflows/fetch-data.yml` 裡的 `cron`
-  設定(目前是 UTC 時間 `22-23,0-11` 點、每 15 分鐘一次,對應台灣時間
-  06:00–19:00)。
+  設定(目前是 UTC 時間 `22-23,0-11` 點、每 5 分鐘一次,對應台灣時間
+  06:00–19:00;5 分鐘是 GitHub Actions 排程支援的最短間隔)。
 - **重試次數 / 等待秒數**:改 `scripts/scrape.py` 最上面的
   `MAX_ATTEMPTS`、`BACKOFF_BASE_SECONDS`、`BACKOFF_MAX_SECONDS`。
-- **前端自動整理頻率 / 過期警示門檻**:改 `app.js` 最上面的
-  `REFRESH_INTERVAL_MS`、`STALE_WARN_MINUTES`。
+- **前端自動整理頻率**:改 `app.js` 最上面的 `REFRESH_INTERVAL_MS`。
 - **要監控的案場**:改 `scripts/scrape.py` 裡的 `SITE_ID`
   (目前是 `1040091`,對應原網頁網址 `/tv/1040091/`)。
 
