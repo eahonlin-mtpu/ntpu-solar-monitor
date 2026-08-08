@@ -1,8 +1,8 @@
 {
   "status": "ok",
-  "attempts": 1,
-  "fetched_at": "2026-08-08T10:02:29+00:00",
-  "last_attempt_at": "2026-08-08T10:02:29+00:00",
+  "attempts": 2,
+  "fetched_at": "2026-08-08T11:15:15+00:00",
+  "last_attempt_at": "2026-08-08T11:15:15+00:00",
   "error": null,
   "sites": [
     {
@@ -11,9 +11,9 @@
       "name_main": "臺北大學-臺北校區",
       "name_sub": "教學大樓",
       "kwp": 184.32,
-      "today_kwh": 564,
-      "total_kwh": 768.304,
-      "carbon_ton": 409.506032,
+      "today_kwh": 565,
+      "total_kwh": 768.305,
+      "carbon_ton": 409.506565,
       "thumbnail_url": "https://newsolarwebstorage.blob.core.windows.net/sitess-public/1040091/cvr/thumbnail/1040091.jpg"
     },
     {
@@ -44,9 +44,9 @@
       "name_main": "臺北大學 三峽校區",
       "name_sub": "體育館",
       "kwp": 702.72,
-      "today_kwh": 1853,
-      "total_kwh": 4295.654,
-      "carbon_ton": 2289.5835819999998,
+      "today_kwh": 1854,
+      "total_kwh": 4295.655,
+      "carbon_ton": 2289.584115,
       "thumbnail_url": "https://newsolarwebstorage.blob.core.windows.net/sitess-public/2370061/cvr/thumbnail/2370061.jpg"
     },
     {
