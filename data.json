@@ -1,8 +1,8 @@
 {
   "status": "ok",
   "attempts": 1,
-  "fetched_at": "2026-08-21T06:19:35+00:00",
-  "last_attempt_at": "2026-08-21T06:19:35+00:00",
+  "fetched_at": "2026-08-21T07:11:55+00:00",
+  "last_attempt_at": "2026-08-21T07:11:55+00:00",
   "error": null,
   "sites": [
     {
@@ -11,9 +11,9 @@
       "name_main": "臺北大學-臺北校區",
       "name_sub": "教學大樓",
       "kwp": 184.32,
-      "today_kwh": 538,
-      "total_kwh": 776.153,
-      "carbon_ton": 413.689549,
+      "today_kwh": 558,
+      "total_kwh": 776.173,
+      "carbon_ton": 413.70020900000003,
       "thumbnail_url": "https://newsolarwebstorage.blob.core.windows.net/sitess-public/1040091/cvr/thumbnail/1040091.jpg"
     },
     {
@@ -22,9 +22,9 @@
       "name_main": "臺北大學 三峽校區",
       "name_sub": "崇越館",
       "kwp": 244.48,
-      "today_kwh": 805,
-      "total_kwh": 941.102,
-      "carbon_ton": 501.607366,
+      "today_kwh": 807,
+      "total_kwh": 941.104,
+      "carbon_ton": 501.60843200000005,
       "thumbnail_url": "https://newsolarwebstorage.blob.core.windows.net/sitess-public/2370041/cvr/thumbnail/2370041.jpg"
     },
     {
@@ -33,9 +33,9 @@
       "name_main": "臺北大學 三峽校區",
       "name_sub": "圖資大樓",
       "kwp": 139.52,
-      "today_kwh": 464,
-      "total_kwh": 905.226,
-      "carbon_ton": 482.48545800000005,
+      "today_kwh": 465,
+      "total_kwh": 905.227,
+      "carbon_ton": 482.485991,
       "thumbnail_url": "https://newsolarwebstorage.blob.core.windows.net/sitess-public/2370051/cvr/thumbnail/2370051.jpg"
     },
     {
@@ -44,9 +44,9 @@
       "name_main": "臺北大學 三峽校區",
       "name_sub": "體育館",
       "kwp": 702.72,
-      "today_kwh": 2115,
-      "total_kwh": 4325.971,
-      "carbon_ton": 2305.742543,
+      "today_kwh": 2119,
+      "total_kwh": 4325.975,
+      "carbon_ton": 2305.7446750000004,
       "thumbnail_url": "https://newsolarwebstorage.blob.core.windows.net/sitess-public/2370061/cvr/thumbnail/2370061.jpg"
     },
     {
