@@ -1,8 +1,8 @@
 {
   "status": "ok",
   "attempts": 1,
-  "fetched_at": "2026-08-23T07:59:34+00:00",
-  "last_attempt_at": "2026-08-23T07:59:34+00:00",
+  "fetched_at": "2026-08-23T08:31:55+00:00",
+  "last_attempt_at": "2026-08-23T08:31:55+00:00",
   "error": null,
   "sites": [
     {
@@ -11,9 +11,9 @@
       "name_main": "臺北大學-臺北校區",
       "name_sub": "教學大樓",
       "kwp": 184.32,
-      "today_kwh": 445,
-      "total_kwh": 777.109,
-      "carbon_ton": 414.199097,
+      "today_kwh": 454,
+      "total_kwh": 777.118,
+      "carbon_ton": 414.20389400000005,
       "thumbnail_url": "https://newsolarwebstorage.blob.core.windows.net/sitess-public/1040091/cvr/thumbnail/1040091.jpg"
     },
     {
@@ -22,9 +22,9 @@
       "name_main": "臺北大學 三峽校區",
       "name_sub": "崇越館",
       "kwp": 244.48,
-      "today_kwh": 609,
-      "total_kwh": 942.534,
-      "carbon_ton": 502.370622,
+      "today_kwh": 624,
+      "total_kwh": 942.549,
+      "carbon_ton": 502.378617,
       "thumbnail_url": "https://newsolarwebstorage.blob.core.windows.net/sitess-public/2370041/cvr/thumbnail/2370041.jpg"
     },
     {
@@ -33,9 +33,9 @@
       "name_main": "臺北大學 三峽校區",
       "name_sub": "圖資大樓",
       "kwp": 139.52,
-      "today_kwh": 339,
-      "total_kwh": 906.029,
-      "carbon_ton": 482.91345700000005,
+      "today_kwh": 347,
+      "total_kwh": 906.037,
+      "carbon_ton": 482.91772100000003,
       "thumbnail_url": "https://newsolarwebstorage.blob.core.windows.net/sitess-public/2370051/cvr/thumbnail/2370051.jpg"
     },
     {
@@ -44,9 +44,9 @@
       "name_main": "臺北大學 三峽校區",
       "name_sub": "體育館",
       "kwp": 702.72,
-      "today_kwh": 1568,
-      "total_kwh": 4329.66,
-      "carbon_ton": 2307.7087800000004,
+      "today_kwh": 1619,
+      "total_kwh": 4329.711,
+      "carbon_ton": 2307.735963,
       "thumbnail_url": "https://newsolarwebstorage.blob.core.windows.net/sitess-public/2370061/cvr/thumbnail/2370061.jpg"
     },
     {
@@ -55,9 +55,9 @@
       "name_main": "臺北大學 三峽校區",
       "name_sub": "行政大樓",
       "kwp": 66.56,
-      "today_kwh": 144,
-      "total_kwh": 373.632,
-      "carbon_ton": 199.145856,
+      "today_kwh": 146,
+      "total_kwh": 373.634,
+      "carbon_ton": 199.14692200000002,
       "thumbnail_url": "https://newsolarwebstorage.blob.core.windows.net/sitess-public/2370071/cvr/thumbnail/2370071.jpg"
     }
   ]
