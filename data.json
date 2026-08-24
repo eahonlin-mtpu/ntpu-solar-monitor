@@ -1,8 +1,8 @@
 {
   "status": "ok",
-  "attempts": 1,
-  "fetched_at": "2026-08-24T11:05:07+00:00",
-  "last_attempt_at": "2026-08-24T11:05:07+00:00",
+  "attempts": 2,
+  "fetched_at": "2026-08-24T11:38:01+00:00",
+  "last_attempt_at": "2026-08-24T11:38:01+00:00",
   "error": null,
   "sites": [
     {
